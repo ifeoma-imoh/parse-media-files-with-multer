@@ -12,7 +12,7 @@ export default function IndexPage() {
     const data = new FormData();
     data.set("sample_file", file);
     try {
-      const res = await axios.post("api/upload", data);
+      const res = await axios.post("/api/upload", data);
       setRes(res.data);
     } catch (error) {
       console.log(error);
