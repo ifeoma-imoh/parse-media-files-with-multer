@@ -10,7 +10,6 @@ export default function IndexPage() {
     setLoading(true);
     e.preventDefault();
     const data = new FormData();
-    console.log(file);
     data.set("sample_file", file);
     try {
       const res = await axios.post("/api/upload", data);

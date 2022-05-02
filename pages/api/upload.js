@@ -20,6 +20,10 @@ function runMiddleware(req, res, fn) {
 
 
 const handler = async (req, res) => {
+  const { method } = req;
+  if (method === "OPTIONS") {
+    return res.status(200).send("ok");
+  }
     try {
       await runMiddleware(req, res, myUploadMiddleware);
       const b64 = Buffer.from(req.file.buffer).toString("base64");
